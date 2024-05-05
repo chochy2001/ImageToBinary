@@ -1,3 +1,89 @@
+# English Version
+# Image to Binary Converter
+
+This project is an image to binary converter developed in Go. It allows you to convert an image in PNG format to a binary representation based on a specified threshold.
+
+## Project Structure
+
+The project has the following file structure:
+
+```
+.
+├── .git/
+├── .idea/
+├── images/
+│   ├── imagen1.png
+│   ├── imagen2.png
+│   └── imagen3.png
+├── .DS_Store
+├── flutter.png
+├── go.mod
+├── go.sum
+├── golang.png
+├── image_binary
+├── image_binary.go
+├── imagen1.txt
+├── imagen2.txt
+└── imagen3.txt
+```
+
+## Dependencies
+
+The project uses the following dependencies:
+
+- `image`: Standard Go package for image manipulation.
+- `image/color`: Standard Go package for color handling.
+- `os`: Standard Go package for file operations.
+- `github.com/nfnt/resize`: External library for resizing images.
+
+## Functionality
+
+The program performs the following steps:
+
+1. Opens the specified image file (`./images/imagen3.png`).
+2. Decodes the image using the `image` package.
+3. Resizes the image to a size of 640x480 pixels using the `resize` library.
+4. Creates an output file (`imagen3.txt`) to store the binary representation.
+5. Iterates over each pixel of the image and converts its value to grayscale.
+6. Compares the pixel value with a predefined threshold (50 in this case).
+   - If the value is greater than the threshold, it writes a "0" to the output file.
+   - If the value is less than or equal to the threshold, it writes a "1" to the output file.
+7. Separates each row of the binary representation with a newline.
+
+## Usage
+
+To use the converter, follow these steps:
+
+1. Clone the repository or download the project files.
+2. Make sure you have Go installed on your system.
+3. Place the image you want to convert in the `images/` folder with the name `imagen3.png`.
+4. Open a terminal and navigate to the project folder.
+5. Run the following command to compile the program:
+   ```
+   go build image_binary.go
+   ```
+6. Run the generated program:
+   ```
+   ./image_binary
+   ```
+7. The program will generate an `imagen3.txt` file with the binary representation of the image.
+
+## Customization
+
+You can customize the behavior of the converter by modifying the following parameters in the `image_binary.go` file:
+
+- `threshold`: Threshold used to determine whether a pixel is considered "0" or "1". Adjust this value according to your needs.
+- `"./images/imagen3.png"`: Path and name of the input image file. Make sure the image is in the `images/` folder and has the correct name.
+- `"imagen3.txt"`: Name of the output file where the binary representation will be saved. You can change it if desired.
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
+
+
+
+# Spanish Version 
+
 # Conversor de Imagen a Binario
 
 Este proyecto es un conversor de imagen a binario desarrollado en Go. Permite convertir una imagen en formato PNG a una representación binaria basada en un umbral determinado.
