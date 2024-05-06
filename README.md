@@ -15,16 +15,19 @@ The project has the following file structure:
 │   ├── imagen1.png
 │   ├── imagen2.png
 │   └── imagen3.png
-├── .DS_Store
-├── flutter.png
+│   ├── imagen4.png
+│   └── imagen5.png
+│   └── imagen6.png
 ├── go.mod
 ├── go.sum
-├── golang.png
 ├── image_binary
 ├── image_binary.go
 ├── imagen1.txt
 ├── imagen2.txt
 └── imagen3.txt
+└── imagen4.txt
+└── imagen5.txt
+└── imagen6.txt
 ```
 
 ## Dependencies
@@ -100,16 +103,19 @@ El proyecto tiene la siguiente estructura de archivos:
 │   ├── imagen1.png
 │   ├── imagen2.png
 │   └── imagen3.png
-├── .DS_Store
-├── flutter.png
+│   ├── imagen4.png
+│   └── imagen5.png
+│   └── imagen6.png
 ├── go.mod
 ├── go.sum
-├── golang.png
 ├── image_binary
 ├── image_binary.go
 ├── imagen1.txt
 ├── imagen2.txt
 └── imagen3.txt
+└── imagen4.txt
+└── imagen5.txt
+└── imagen6.txt
 ```
 
 ## Dependencias
