@@ -15,7 +15,12 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	defer file.Close()
+	defer func(file *os.File) {
+		err := file.Close()
+		if err != nil {
+			panic(err)
+		}
+	}(file)
 
 	// Decodifica la imagen
 	img, _, err := image.Decode(file)
@@ -31,21 +36,42 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	defer outFile.Close()
+	defer func(outFile *os.File) {
+		err := outFile.Close()
+		if err != nil {
+			panic(err)
+		}
+	}(outFile)
 
 	// Convierte la imagen a binario con umbral
 	threshold := 50
 	for y := 0; y < img.Bounds().Dy(); y++ {
-		outFile.WriteString("\"")
+		_, err := outFile.WriteString("\"")
+		if err != nil {
+			panic(err)
+			return
+		}
 		for x := 0; x < img.Bounds().Dx(); x++ {
 			// Obtiene el valor del pixel en escala de grises
 			grayColor := color.GrayModel.Convert(img.At(x, y)).(color.Gray)
 			if grayColor.Y > uint8(threshold) {
-				outFile.WriteString("0")
+				_, err := outFile.WriteString("0")
+				if err != nil {
+					panic(err)
+					return
+				}
 			} else {
-				outFile.WriteString("1")
+				_, err := outFile.WriteString("1")
+				if err != nil {
+					panic(err)
+					return
+				}
 			}
 		}
-		outFile.WriteString("\",\n")
+		_, err1 := outFile.WriteString("\",\n")
+		if err1 != nil {
+			panic(err1)
+			return
+		}
 	}
 }
