@@ -34,7 +34,7 @@ func main() {
 	defer outFile.Close()
 
 	// Convierte la imagen a binario con umbral
-	threshold := 50
+	threshold := 55
 	for y := 0; y < img.Bounds().Dy(); y++ {
 		outFile.WriteString("\"")
 		for x := 0; x < img.Bounds().Dx(); x++ {
