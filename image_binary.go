@@ -11,7 +11,7 @@ import (
 
 func main() {
 	// Abre el archivo de imagen
-	file, err := os.Open("./images/imagen4.png")
+	file, err := os.Open("./images/imagen6.png")
 	if err != nil {
 		panic(err)
 	}
@@ -27,7 +27,7 @@ func main() {
 	img = resize.Resize(640, 480, img, resize.Lanczos3)
 
 	// Crear archivo de salida
-	outFile, err := os.Create("imagen4.txt")
+	outFile, err := os.Create("imagen6.txt")
 	if err != nil {
 		panic(err)
 	}
